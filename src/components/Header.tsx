@@ -16,13 +16,6 @@ export const Header: React.FC = () => {
           </span>
         </div>
 
-        {/* Center links (Desktop) */}
-        <nav className="hidden md:flex items-center gap-6 text-xs sm:text-sm font-semibold text-slate-600">
-          <span className="text-slate-800 hover:text-brand-600 transition-colors cursor-pointer">Platform</span>
-          <span className="text-slate-800 hover:text-brand-600 transition-colors cursor-pointer">Traceability Chain</span>
-          <span className="text-slate-800 hover:text-brand-600 transition-colors cursor-pointer">Cooperatives</span>
-        </nav>
-
         {/* Right side Consumer Portal Badge */}
         <div className="flex items-center gap-2">
           <span className="hidden sm:inline-block text-[11px] font-bold uppercase tracking-wider text-slate-400">
@@ -37,4 +30,3 @@ export const Header: React.FC = () => {
     </header>
   );
 };
-
