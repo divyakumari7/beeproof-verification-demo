@@ -40,7 +40,7 @@ export interface HoneyBatch {
   status: 'VERIFIED' | 'PASS';
   statusText: string;
   summaryDescription: string;
-  
+
   // Origin & Harvest
   origin: {
     title: string;
@@ -48,21 +48,21 @@ export interface HoneyBatch {
     location: string;
     region: string;
   };
-  
+
   // Floral Source & Processing
   floral: {
     title: string;
     source: string;
     yield: string;
   };
-  
+
   // Harvest Date & Method
   harvest: {
     title: string;
     date: string;
     method: string;
   };
-  
+
   // Quality Verdict
   quality: {
     title: string;
@@ -70,19 +70,21 @@ export interface HoneyBatch {
     certificateNumber: string;
     status: string;
   };
-  
+
   // Distribution & Logistics
   distribution: {
     title: string;
     status: string;
     guidelines: string;
   };
-  
+
   // NABL Lab Metrics
   labSection: {
     title: string;
     reportPdfPath: string;
     reportFileName: string;
+    reportPdfPathHindi: string;
+    reportFileNameHindi: string;
     metrics: LabMetric[];
   };
   
@@ -92,7 +94,7 @@ export interface HoneyBatch {
     totalStages: number;
     stages: LifecycleStage[];
   };
-  
+
   // Blockchain Record
   blockchain: BlockchainRecordData;
 }
@@ -106,43 +108,45 @@ export const DEMO_BATCH: HoneyBatch = {
   status: 'VERIFIED',
   statusText: 'Provenance Confirmed',
   summaryDescription: 'Batch provenance, quality and custody records have been verified.',
-  
+
   origin: {
     title: 'ORIGIN APIARY & HARVEST DETAILS',
     cluster: 'Sundarbans Mangrove Reserve Cluster',
     location: 'South 24 Parganas, West Bengal (Eastern)',
     region: 'Sundarbans Biosphere Reserve',
   },
-  
+
   floral: {
     title: 'FLORAL SOURCE & PROCESSING DETAILS',
     source: 'Wild Mangrove Khalisha & Goran',
     yield: '485.5 kg',
   },
-  
+
   harvest: {
     title: 'HARVEST DATE',
     date: '2026-08-23',
     method: 'Cold extracted below 40°C',
   },
-  
+
   quality: {
     title: 'QUALITY VERDICT',
     verdict: 'Quality Verified (PASS)',
     certificateNumber: 'Cert #BP-NABL-2026-00492',
     status: 'PASS',
   },
-  
+
   distribution: {
     title: 'DISTRIBUTION & RETAIL LOGISTICS DETAILS',
     status: 'Delivered to Authorized Retailer',
     guidelines: 'End-to-end cold supply chain tracking under KVIC National Honey Mission guidelines.',
   },
-  
+
   labSection: {
     title: 'NABL LABORATORY NMR & PHYSICOCHEMICAL METRICS',
     reportPdfPath: '/reports/BP-2026-SUN-001-Lab-Report.pdf',
     reportFileName: 'BP-2026-SUN-001-Lab-Report.pdf',
+    reportPdfPathHindi: '/reports/BP-2026-SUN-001-Lab-Report-HI.pdf',
+    reportFileNameHindi: 'BP-2026-SUN-001-Lab-Report-HI.pdf',
     metrics: [
       {
         id: 'metric-1',
@@ -176,7 +180,7 @@ export const DEMO_BATCH: HoneyBatch = {
       }
     ],
   },
-  
+
   lifecycle: {
     title: 'PROVENANCE CUSTODY TRAIL (5 STAGES)',
     totalStages: 5,
@@ -226,7 +230,7 @@ export const DEMO_BATCH: HoneyBatch = {
       }
     ]
   },
-  
+
   blockchain: {
     recordCheck: '✓ Matches On-Chain Hash',
     transactionHash: '0x903bc9ed078535a77dfc47da1eb44d20eb6c1365ec40eb049d49b8c44dbe8f5',

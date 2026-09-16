@@ -156,11 +156,14 @@ export const FullDetailsPage: React.FC = () => {
           {/* 4 Metric Boxes */}
           <LabMetrics metrics={batch.labSection.metrics} />
 
-          {/* STATIC LAB REPORT PDF BUTTON */}
+          {/* BILINGUAL LAB REPORT PDF BUTTON */}
           <div className="pt-2">
             <LabReportButton
+              batchId={batch.batchId}
               pdfUrl={batch.labSection.reportPdfPath}
               fileName={batch.labSection.reportFileName}
+              pdfUrlHindi={batch.labSection.reportPdfPathHindi}
+              fileNameHindi={batch.labSection.reportFileNameHindi}
             />
           </div>
         </div>
